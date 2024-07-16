@@ -23,7 +23,7 @@ class cabecalho:
         area = str(input("\033[32mDigite qual area voce operou (Ex: Mercearia,Deposito,Corte de Frutas): \033[m"))
         cabecalho.listaCabecalho.append(f"*Nome:* _{nomeUs}_\n")
         cabecalho.listaCabecalho.append(f"*Pix:* _{pix}_\n")                                
-        cabecalho.listaCabecalho.append(f"{local}\n")
+        cabecalho.listaCabecalho.append(f"_{local}_\n")
         cabecalho.listaCabecalho.append(f"_{area}_")
          
         self.local = local
@@ -47,7 +47,7 @@ class datas:
         i = 0
         while i != DiasTra:
             i += 1 
-            dia = int(input("\033[32mDigite o dia trabalhado: \033[m"))
+            dia = int(input("\033[32mDigite o dia do mes trabalhado: \033[m"))
             datas.listaDatas.append(f"* {dia}/{mes}/{ano} - {hrini} as {hrfin}")
         self.DiasTra = DiasTra
         self.dia = dia

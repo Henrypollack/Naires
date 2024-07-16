@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cabeçalho</title>
+</head>
+<body>
+    <h1>Formulário de Cabeçalho</h1>
+    <form id="cabecalhoForm">
+        <label for="nome">Digite o seu nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="pix">Digite o seu pix:</label>
+        <input type="text" id="pix" name="pix" required><br><br>
+
+        <label for="local">Digite qual mercado você trabalhou:</label>
+        <select id="local" name="local" required>
+            <option value="Condor Agua Verde">Condor Agua Verde</option>
+            <option value="Condor Novo Mundo">Condor Novo Mundo</option></select>
+            <br><br>
+
+        <label for="area">Digite qual área você operou:</label>
+        <select id="area" name="area" required>
+            <option value="Corte de Frutas">Corte de Frutas</option>
+            <option value="Mercearia">Mercearia</option>
+            <option value="Depósito">Depósito</option>
+            <option value="Padaria">Padaria</option>
+            <option value="Caixa">Caixa</option>
+        </select>
+        <br><br>
+
+        <button type="button" onclick="inputCabecalho()">Enviar</button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <div id="resultado"></div>
+
+    <script src="src/main.js"></script>
+</body>
+</html>

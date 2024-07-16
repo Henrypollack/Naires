@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada de Dados</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Opcional: Adicione um arquivo CSS para estilos -->
+</head>
+<body>
+    <form id="dataForm">
+        <label for="DiasTra">Digite quantos dias você trabalhou:</label>
+        <input type="number" id="DiasTra" name="DiasTra"><br><br>
+
+        <label for="hrini">Digite a hora que você entra:</label>
+        <select id="hrini" name="hrini">
+            <!-- Adicione opções de horas aqui -->
+            <option value="08:00">08:00</option>
+            <option value="09:00">09:00</option>
+            <!-- Mais opções -->
+        </select><br><br>
+
+        <label for="hrfin">Digite a hora que você sai:</label>
+        <select id="hrfin" name="hrfin">
+            <!-- Adicione opções de horas aqui -->
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
+            <!-- Mais opções -->
+        </select><br><br>
+
+        <label for="diasTrabalhados">Selecione os dias trabalhados:</label>
+        <input type="text" id="diasTrabalhados" name="diasTrabalhados" readonly><br><br>
+
+        <button type="button" onclick="adicionarData()">Adicionar Datas</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script src="script.js"></script> <!-- Inclua o arquivo JavaScript -->
+</body>
+</html>

@@ -13,8 +13,9 @@ class Datas {
 }
 
 function adicionarCampoDia() {
-    const novaDiv = document.createElement('div');
-    novaDiv.className = 'diaTrabalhado';
+    const tabelaBody = document.getElementById('diasTrabalhadosContainer');
+
+    const novaLinha = tabelaBody.insertRow();
 
     const novoSelect = document.createElement('select');
     novoSelect.className = 'diasTrab';
@@ -32,36 +33,29 @@ function adicionarCampoDia() {
     adicionarOpcaoHoras(hriniSelect);
     adicionarOpcaoHoras(hrfinSelect);
 
+    let celula = novaLinha.insertCell();
+    celula.appendChild(novoSelect);
+
+    celula = novaLinha.insertCell();
+    celula.appendChild(hriniSelect);
+
+    celula = novaLinha.insertCell();
+    celula.appendChild(hrfinSelect);
+
+    celula = novaLinha.insertCell();
     const adicionarBtn = document.createElement('button');
     adicionarBtn.type = 'button';
     adicionarBtn.className = 'adicionarDiaBtn';
     adicionarBtn.textContent = '+';
     adicionarBtn.addEventListener('click', adicionarCampoDia);
+    celula.appendChild(adicionarBtn);
 
     const removerBtn = document.createElement('button');
     removerBtn.type = 'button';
     removerBtn.className = 'removerDiaBtn';
     removerBtn.textContent = '-';
-    removerBtn.addEventListener('click', () => novaDiv.remove());
-
-    const tabela = document.createElement('table');
-    const linha = tabela.insertRow();
-
-    let celula = linha.insertCell();
-    celula.appendChild(novoSelect);
-
-    celula = linha.insertCell();
-    celula.appendChild(hriniSelect);
-
-    celula = linha.insertCell();
-    celula.appendChild(hrfinSelect);
-
-    celula = linha.insertCell();
-    celula.appendChild(adicionarBtn);
+    removerBtn.addEventListener('click', () => novaLinha.remove());
     celula.appendChild(removerBtn);
-
-    novaDiv.appendChild(tabela);
-    document.getElementById('diasTrabalhadosContainer').appendChild(novaDiv);
 }
 
 function adicionarOpcaoDias(selectElement) {

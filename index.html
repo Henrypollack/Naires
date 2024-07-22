@@ -14,26 +14,34 @@
 
         <h1>Formulário de Cabeçalho</h1>
         <form id="formularioCompleto">
-            <label for="nome">Digite o seu nome:</label>
-            <input type="text" id="nome" name="nome" required><br><br>
+            <div class="form-group">
+                <label for="nome">Digite o seu nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
 
-            <label for="pix">Digite o seu pix:</label>
-            <input type="text" id="pix" name="pix" required><br><br>
+            <div class="form-group">
+                <label for="pix">Digite o seu pix:</label>
+                <input type="text" id="pix" name="pix" required>
+            </div>
 
-            <label for="local">Digite qual mercado você trabalhou:</label>
-            <select id="local" name="local" required>
-                <option value="Condor Agua Verde">Condor Agua Verde</option>
-                <option value="Condor Novo Mundo">Condor Novo Mundo</option>
-            </select><br><br>
+            <div class="form-group">
+                <label for="local">Digite qual mercado você trabalhou:</label>
+                <select id="local" name="local" required>
+                    <option value="Condor Agua Verde">Condor Agua Verde</option>
+                    <option value="Condor Novo Mundo">Condor Novo Mundo</option>
+                </select>
+            </div>
 
-            <label for="area">Digite qual área você operou:</label>
-            <select id="area" name="area" required>
-                <option value="Corte de Frutas">Corte de Frutas</option>
-                <option value="Mercearia">Mercearia</option>
-                <option value="Depósito">Depósito</option>
-                <option value="Padaria">Padaria</option>
-                <option value="Caixa">Caixa</option>
-            </select><br><br>
+            <div class="form-group">
+                <label for="area">Digite qual área você operou:</label>
+                <select id="area" name="area" required>
+                    <option value="Corte de Frutas">Corte de Frutas</option>
+                    <option value="Mercearia">Mercearia</option>
+                    <option value="Depósito">Depósito</option>
+                    <option value="Padaria">Padaria</option>
+                    <option value="Caixa">Caixa</option>
+                </select>
+            </div>
 
             <h1>Formulário de Dias Trabalhados</h1>
             <table>
@@ -55,6 +63,7 @@
 
         <h2>Resultado:</h2>
         <div id="resultado"></div>
+        <button id="copiarBtn">Copiar</button>
     </div>
 
     <script src="src/cabecalho.js"></script>

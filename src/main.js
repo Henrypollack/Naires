@@ -16,4 +16,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.getElementById('resultado').innerHTML = resultadoCabecalho + '<br><br>' + listaDeDatas;
     });
+
+    // Adiciona o evento de click ao botão de copiar para clipboard
+    document.getElementById('copiarBtn').addEventListener('click', function() {
+        const resultado = document.getElementById('resultado');
+        const range = document.createRange();
+        range.selectNode(resultado);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+
+        try {
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+            alert('Texto copiado para o clipboard!');
+        } catch (err) {
+            alert('Falha ao copiar o texto. Tente novamente.');
+        }
+    });
 });

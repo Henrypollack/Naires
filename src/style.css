@@ -1,4 +1,70 @@
+/* Adicione o estilo para o contêiner dos balões */
+.balao-container {
+    display: flex;               /* Exibe os balões lado a lado */
+    gap: 20px;                   /* Espaçamento entre os balões */
+    margin-bottom: 20px;         /* Margem inferior para separar do conteúdo abaixo */
+}
+
+/* Estilo para os balões de mensagem */
+.balao-mensagem {
+    background: #e1ffc7;          /* Cor de fundo do balão */
+    border: 1px solid #b0e57c;    /* Borda do balão */
+    border-radius: 10px;          /* Bordas arredondadas */
+    padding: 15px;                /* Espaçamento interno */
+    position: relative;           /* Para posicionar o triângulo corretamente */
+    width: 45%;                   /* Largura dos balões */
+}
+
+/* Triângulo para o balão de mensagem */
+.balao-mensagem::before {
+    content: "";
+    position: absolute;
+    border-width: 10px;
+    border-style: solid;
+}
+
+/* Triângulo no lado esquerdo do balão */
+.balao-mensagem#explicacaoDias::before {
+    border-color: transparent #e1ffc7 transparent transparent;
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+}
+
+/* Triângulo no lado direito do balão */
+.balao-mensagem#explicacaoDobra::before {
+    border-color: transparent transparent transparent #e1ffc7;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+}
 /* Estilos gerais */
+/* Ajustes para o balão de mensagem */
+.balao-mensagem {
+    background-color: #DCF8C6;
+    border: 1px solid #34B7F1;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 300px;
+    word-wrap: break-word;
+    margin: 10px auto; /* Centraliza o balão de mensagem */
+    position: relative;
+}
+
+.balao-mensagem::before {
+    content: '';
+    position: absolute;
+    top: 10px; /* Ajusta a posição do triângulo */
+    left: -10px; /* Ajusta a posição do triângulo */
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: #DCF8C6; /* Cor do triângulo */
+    border-left: 0;
+    border-top: 0;
+}
+
+
 body {
     background-color: #F8F9FA; /* Branco gelo */
     font-family: Arial, sans-serif;

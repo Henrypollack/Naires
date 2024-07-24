@@ -5,10 +5,13 @@ class Cabecalho {
     }
 
     inputCabecalho() {
-        const nomeUs = document.getElementById('nome').value;
+        let nomeUs = document.getElementById('nome').value;
         const pix = document.getElementById('pix').value;
         const local = document.getElementById('local').value;
         const area = document.getElementById('area').value;
+
+        // Capitaliza a primeira letra de cada palavra
+        nomeUs = nomeUs.split(' ').map(palavra => palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase()).join(' ');
 
         this.listaCabecalho.push(`*Nome:* _${nomeUs}_\n`);
         this.listaCabecalho.push(`*Pix:* _${pix}_\n`);

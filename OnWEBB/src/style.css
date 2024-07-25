@@ -1,8 +1,9 @@
 /* Adicione o estilo para o contêiner dos balões */
 .balao-container {
-    display: flex;               /* Exibe os balões lado a lado */
-    gap: 20px;                   /* Espaçamento entre os balões */
-    margin-bottom: 20px;         /* Margem inferior para separar do conteúdo abaixo */
+    display: flex;
+    flex-direction: column;   /* Por padrão, exibir um embaixo do outro */
+    gap: 20px;                /* Espaçamento entre os balões */
+    margin-bottom: 20px;      /* Margem inferior para separar do conteúdo abaixo */
 }
 
 /* Estilo para os balões de mensagem */
@@ -12,7 +13,8 @@
     border-radius: 10px;          /* Bordas arredondadas */
     padding: 15px;                /* Espaçamento interno */
     position: relative;           /* Para posicionar o triângulo corretamente */
-    width: 45%;                   /* Largura dos balões */
+    width: 100%;                  /* Largura dos balões */
+    box-sizing: border-box;
 }
 
 /* Triângulo para o balão de mensagem */
@@ -25,7 +27,7 @@
 
 /* Triângulo no lado esquerdo do balão */
 .balao-mensagem#explicacaoDias::before {
-    border-color: transparent #e1ffc7 transparent transparent;
+    border-color: transparent #e1ffc7 transparent transparent; /* Cor correta para o triângulo */
     top: 50%;
     left: -20px;
     transform: translateY(-50%);
@@ -33,38 +35,13 @@
 
 /* Triângulo no lado direito do balão */
 .balao-mensagem#explicacaoDobra::before {
-    border-color: transparent transparent transparent #e1ffc7;
+    border-color: transparent transparent transparent #e1ffc7; /* Cor correta para o triângulo */
     top: 50%;
     right: -20px;
     transform: translateY(-50%);
 }
+
 /* Estilos gerais */
-/* Ajustes para o balão de mensagem */
-.balao-mensagem {
-    background-color: #DCF8C6;
-    border: 1px solid #34B7F1;
-    border-radius: 10px;
-    padding: 10px;
-    max-width: 300px;
-    word-wrap: break-word;
-    margin: 10px auto; /* Centraliza o balão de mensagem */
-    position: relative;
-}
-
-.balao-mensagem::before {
-    content: '';
-    position: absolute;
-    top: 10px; /* Ajusta a posição do triângulo */
-    left: -10px; /* Ajusta a posição do triângulo */
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-right-color: #DCF8C6; /* Cor do triângulo */
-    border-left: 0;
-    border-top: 0;
-}
-
-
 body {
     background-color: #F8F9FA; /* Branco gelo */
     font-family: Arial, sans-serif;
@@ -76,7 +53,6 @@ body {
     padding: 20px;
     background-color: #C19A6B; /* Amarelo escuro meio tom de caramelo */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Cabeçalho */
@@ -128,6 +104,7 @@ form {
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
 thead th {
@@ -165,6 +142,13 @@ button.adicionarDiaBtn {
 
 button.removerDiaBtn {
     background-color: #dc3545;
+}
+
+/* Media queries para ajustar o layout dos balões em dispositivos maiores */
+@media (min-width: 768px) {
+    .balao-container {
+        flex-direction: row;  /* Em dispositivos maiores, exibir lado a lado */
+    }
 }
 
 /* Centraliza o botão de enviar */

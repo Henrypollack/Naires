@@ -40,7 +40,49 @@
     right: -20px;
     transform: translateY(-50%);
 }
+.image-flip {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff; /* Adiciona um fundo para visibilidade */
+    transition: height 0.5s ease-in-out; /* Suaviza a transição da altura */
+}
 
+.flip-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.flip-img.show {
+    position: relative; /* Faz a imagem afetar o layout do contêiner */
+    opacity: 1;
+}
+.sticker {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 10; /* Garante que o adesivo fique acima da imagem */
+}
+.image-container .sticker {
+    display: none;
+}
+
+.image-container .flip-img.show + .sticker {
+    display: block;
+}
 /* Estilos gerais */
 body {
     background-color: #F8F9FA; /* Branco gelo */
